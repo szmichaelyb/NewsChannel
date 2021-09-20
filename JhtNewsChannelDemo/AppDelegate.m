@@ -2,29 +2,36 @@
 //  AppDelegate.m
 //  JhtNewsChannelDemo
 //
-//  GitHub主页: https://github.com/jinht
-//  CSDN博客: http://blog.csdn.net/anticipate91
-//
 //  Created by Jht on 16/8/8.
 //  Copyright © 2016年 JhtNewsChannelDemo. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "JhtSortViewDemoVC.h"
+#import "JhtTabBarController.h"
 #import "JhtNewsChannelViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
+
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc
-                                                  ] init];
+    JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc                                     ] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:newsChannel];
     
-    // Override point for customization after application launch.
+    /** // 含有TabBar的情况
+     JhtTabBarController *VC = [[JhtTabBarController alloc] init];
+     self.window.rootViewController = VC;
+     */
+    
+    /** // 单独使用排序View
+    JhtSortViewDemoVC *sort = [[JhtSortViewDemoVC alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:sort];
+     */
+    
     return YES;
 }
 
